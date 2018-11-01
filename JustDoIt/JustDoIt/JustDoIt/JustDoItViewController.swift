@@ -11,7 +11,7 @@ import UIKit
 // Changed the name of the view controller to JustDoItViewController
 class JustDoItViewController: UITableViewController {
 
-    let itemArray = ["Finish JustDoIt App", "Work on Assignment #2", "Go through Data Structure Code"]
+    var itemArray = ["Finish JustDoIt App", "Work on Assignment #2", "Go through Data Structure Code"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,5 +44,24 @@ class JustDoItViewController: UITableViewController {
         // Once you deselect it won't highlight in gray anymore
         tableView.deselectRow(at: indexPath, animated: true)
     }
+    
+    @IBAction func addButtonPressed(_ sender: UIBarButtonItem) {
+        var textField = UITextField() // to make textField available to the closures below
+        
+        let alert = UIAlertController(title: "Add New JustDoIt Item", message: "Get Shit Done", preferredStyle: .alert)
+        
+        let action = UIAlertAction(title: "Add Item", style: .default) { (action) in
+            self.itemArray.append(textField.text!) // append user input from the alert
+            self.tableView.reloadData() // input won't be automatically added, so require reloadData function
+        }
+        
+        alert.addTextField { (alerTextField) in
+            alerTextField.placeholder = "Create new item"
+            textField = alerTextField
+        }
+        alert.addAction(action)
+        present(alert, animated: true, completion: nil)
+    }
+    
 }
 

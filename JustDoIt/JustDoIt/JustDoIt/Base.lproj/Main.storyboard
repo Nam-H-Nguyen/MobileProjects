@@ -33,7 +33,14 @@
                             <outlet property="delegate" destination="Tk3-ja-aDA" id="2zC-rD-u0p"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="JustDoIt" id="VYi-t3-Kaf"/>
+                    <navigationItem key="navigationItem" title="JustDoIt" id="VYi-t3-Kaf">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="jzq-PD-HgO">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <action selector="addButtonPressed:" destination="Tk3-ja-aDA" id="je4-aT-68w"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
             </objects>
             <point key="canvasLocation" x="1704.8" y="132.68365817091455"/>
