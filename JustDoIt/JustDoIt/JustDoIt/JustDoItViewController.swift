@@ -13,8 +13,13 @@ class JustDoItViewController: UITableViewController {
 
     var itemArray = ["Finish JustDoIt App", "Work on Assignment #2", "Go through Data Structure Code"]
     
+    let defaults = UserDefaults.standard
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        if let items = defaults.array(forKey: "JustDoItListArray") as? [String] {
+            itemArray = items;
+        }
     }
 
     //@TODO - Tableview Datasource Methods
@@ -52,6 +57,7 @@ class JustDoItViewController: UITableViewController {
         
         let action = UIAlertAction(title: "Add Item", style: .default) { (action) in
             self.itemArray.append(textField.text!) // append user input from the alert
+            self.defaults.set(self.itemArray, forKey: "JustDoItListArray")
             self.tableView.reloadData() // input won't be automatically added, so require reloadData function
         }
         
