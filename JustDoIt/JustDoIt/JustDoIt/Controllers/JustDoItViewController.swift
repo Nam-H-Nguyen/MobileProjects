@@ -11,13 +11,27 @@ import UIKit
 // Changed the name of the view controller to JustDoItViewController
 class JustDoItViewController: UITableViewController {
 
-    var itemArray = ["Finish JustDoIt App", "Work on Assignment #2", "Go through Data Structure Code"]
+//    var itemArray = ["Finish JustDoIt App", "Work on Assignment #2", "Go through Data Structure Code"]
+    var itemArray = [Item]()
     
     let defaults = UserDefaults.standard
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        if let items = defaults.array(forKey: "JustDoItListArray") as? [String] {
+        
+        let newItem = Item()
+        newItem.title = "Finish JustDoIt App"
+        itemArray.append(newItem)
+        
+        let newItem2 = Item()
+        newItem2.title = "Work on Assignment #2"
+        itemArray.append(newItem2)
+        
+        let newItem3 = Item()
+        newItem3.title = "Go through Data Structure Code"
+        itemArray.append(newItem3)
+        
+        if let items = defaults.array(forKey: "JustDoItListArray") as? [Item] {
             itemArray = items;
         }
     }
@@ -28,10 +42,15 @@ class JustDoItViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "JustDoItItemCell", for: indexPath)
-        cell.textLabel?.text = itemArray[indexPath.row]
         
-        // Method tableView expects a return
+        let cell = tableView.dequeueReusableCell(withIdentifier: "JustDoItItemCell", for: indexPath)
+        
+        let item = itemArray[indexPath.row]
+        
+        cell.textLabel?.text = item.title
+        
+        cell.accessoryType = item.done ? .checkmark : .none
+        
         return cell
     }
     
@@ -40,14 +59,17 @@ class JustDoItViewController: UITableViewController {
         // Print to the console the value of the itemArray
 //        print(itemArray[indexPath.row])
         
-        // If user clicks on the cell that already has a checkmark, then it dechecks the checkmark
-        if tableView.cellForRow(at: indexPath)?.accessoryType == .checkmark {
-            tableView.cellForRow(at: indexPath)?.accessoryType = .none
-        } else {
-            tableView.cellForRow(at: indexPath)?.accessoryType = .checkmark
-        }
-        // Once you deselect it won't highlight in gray anymore
+        itemArray[indexPath.row].done = !itemArray[indexPath.row].done
+        
+        tableView.reloadData()
         tableView.deselectRow(at: indexPath, animated: true)
+        // If user clicks on the cell that already has a checkmark, then it dechecks the checkmark
+//        if tableView.cellForRow(at: indexPath)?.accessoryType == .checkmark {
+//            tableView.cellForRow(at: indexPath)?.accessoryType = .none
+//        } else {
+//            tableView.cellForRow(at: indexPath)?.accessoryType = .checkmark
+//        }
+        // Once you deselect it won't highlight in gray anymore
     }
     
     @IBAction func addButtonPressed(_ sender: UIBarButtonItem) {
@@ -56,7 +78,10 @@ class JustDoItViewController: UITableViewController {
         let alert = UIAlertController(title: "Add New JustDoIt Item", message: "Get Shit Done", preferredStyle: .alert)
         
         let action = UIAlertAction(title: "Add Item", style: .default) { (action) in
-            self.itemArray.append(textField.text!) // append user input from the alert
+            let newItem = Item()
+            newItem.title = textField.text!
+            
+            self.itemArray.append(newItem) // append user input from the alert
             self.defaults.set(self.itemArray, forKey: "JustDoItListArray")
             self.tableView.reloadData() // input won't be automatically added, so require reloadData function
         }
