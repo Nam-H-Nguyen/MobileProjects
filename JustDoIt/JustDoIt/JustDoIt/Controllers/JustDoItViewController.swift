@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 // Changed the name of the view controller to JustDoItViewController
 class JustDoItViewController: UITableViewController {
@@ -14,12 +15,12 @@ class JustDoItViewController: UITableViewController {
 //    var itemArray = ["Finish JustDoIt App", "Work on Assignment #2", "Go through Data Structure Code"]
     var itemArray = [Item]()
     
-    let dataFilePath = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first?.appendingPathComponent("Items.plist")
+    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        print(dataFilePath)
+        print(FileManager.default.urls(for: .documentDirectory, in: .userDomainMask))
         
         loadItems()
     }
@@ -44,32 +45,28 @@ class JustDoItViewController: UITableViewController {
     
     //@TODO - Tableview Delegate Methods
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        // Print to the console the value of the itemArray
-//        print(itemArray[indexPath.row])
         
+        // If user clicks on the cell that already has a checkmark, then it dechecks the checkmark
         itemArray[indexPath.row].done = !itemArray[indexPath.row].done
         
         saveItems()
         
-        tableView.deselectRow(at: indexPath, animated: true)
-        // If user clicks on the cell that already has a checkmark, then it dechecks the checkmark
-//        if tableView.cellForRow(at: indexPath)?.accessoryType == .checkmark {
-//            tableView.cellForRow(at: indexPath)?.accessoryType = .none
-//        } else {
-//            tableView.cellForRow(at: indexPath)?.accessoryType = .checkmark
-//        }
         // Once you deselect it won't highlight in gray anymore
+        tableView.deselectRow(at: indexPath, animated: true)
     }
     
     @IBAction func addButtonPressed(_ sender: UIBarButtonItem) {
+        
         var textField = UITextField() // to make textField available to the closures below
         
-        let alert = UIAlertController(title: "Add New JustDoIt Item", message: "Get Shit Done", preferredStyle: .alert)
+        let alert = UIAlertController(title: "Are new to-do item", message: "Just Do It", preferredStyle: .alert)
         
-        let action = UIAlertAction(title: "Add Item", style: .default) { (action) in
-            let newItem = Item()
+        // When user clicks on the Get It Done button on UIAlert
+        let action = UIAlertAction(title: "Get it done", style: .default) { (action) in
+    
+            let newItem = Item(context: self.context)
             newItem.title = textField.text!
-            
+            newItem.done = false
             self.itemArray.append(newItem) // append user input from the alert
             
             self.saveItems()
@@ -86,25 +83,23 @@ class JustDoItViewController: UITableViewController {
     }
     
     func saveItems() {
-        let encoder = PropertyListEncoder() // Allows to write to the plist (property)
         
         do {
-            let data = try encoder.encode(itemArray)
-            try data.write(to: dataFilePath!)
+            try context.save()
         } catch {
-            print("Error encoding item array, \(error)")
+            print("Error saving context \(error)")
         }
-
+        
+        self.tableView.reloadData()
     }
     
     func loadItems() {
-        if let data = try? Data(contentsOf: dataFilePath!) {
-            let decoder = PropertyListDecoder()
-            do {
-                itemArray = try decoder.decode([Item].self, from: data)
-            } catch {
-                print("Error decoding item array, \(error)")
-            }
+        // Fetch data from persistent container
+        let request : NSFetchRequest<Item> = Item.fetchRequest()
+        do {
+            itemArray = try context.fetch(request)
+        } catch {
+            print("Error fetching data from context \(error)")
         }
     }
     
