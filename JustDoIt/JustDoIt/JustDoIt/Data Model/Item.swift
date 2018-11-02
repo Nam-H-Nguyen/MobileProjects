@@ -8,7 +8,8 @@
 
 import Foundation
 
-class Item {
+// Only encodable, decodable with primitive data types
+class Item: Codable {
     var title: String = ""
     var done: Bool = false
 }
