@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CD1F9A3121918B21008AFD51 /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD1F9A3021918B21008AFD51 /* CategoryViewController.swift */; };
 		CD5031BF218B79320010A858 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD5031BE218B79320010A858 /* AppDelegate.swift */; };
 		CD5031C1218B79320010A858 /* JustDoItViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD5031C0218B79320010A858 /* JustDoItViewController.swift */; };
 		CD5031C4218B79320010A858 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD5031C2218B79320010A858 /* Main.storyboard */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CD1F9A3021918B21008AFD51 /* CategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewController.swift; sourceTree = "<group>"; };
 		CD5031BB218B79320010A858 /* JustDoIt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JustDoIt.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD5031BE218B79320010A858 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CD5031C0218B79320010A858 /* JustDoItViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JustDoItViewController.swift; sourceTree = "<group>"; };
@@ -86,6 +88,7 @@
 		CD5031D4218BCA520010A858 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				CD1F9A3021918B21008AFD51 /* CategoryViewController.swift */,
 				CD5031C0218B79320010A858 /* JustDoItViewController.swift */,
 			);
 			path = Controllers;
@@ -170,6 +173,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CD1F9A3121918B21008AFD51 /* CategoryViewController.swift in Sources */,
 				CD5031C1218B79320010A858 /* JustDoItViewController.swift in Sources */,
 				CD5031D8218BE19E0010A858 /* DataModel.xcdatamodeld in Sources */,
 				CD5031BF218B79320010A858 /* AppDelegate.swift in Sources */,

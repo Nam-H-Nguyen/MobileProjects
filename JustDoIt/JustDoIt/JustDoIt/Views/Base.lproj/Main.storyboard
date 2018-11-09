@@ -9,10 +9,9 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--JustDoIt-->
+        <!--Items-->
         <scene sceneID="cf0-LI-Wfp">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="zTB-LD-7o1" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tableViewController id="Tk3-ja-aDA" customClass="JustDoItViewController" customModule="JustDoIt" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Cng-jz-l1T">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
@@ -41,7 +40,7 @@
                             <outlet property="delegate" destination="Tk3-ja-aDA" id="2zC-rD-u0p"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="JustDoIt" id="VYi-t3-Kaf">
+                    <navigationItem key="navigationItem" title="Items" id="VYi-t3-Kaf">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="jzq-PD-HgO">
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
@@ -50,8 +49,9 @@
                         </barButtonItem>
                     </navigationItem>
                 </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zTB-LD-7o1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1704.8" y="132.68365817091455"/>
+            <point key="canvasLocation" x="2898" y="133"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="pnz-dR-lcH">
@@ -68,12 +68,51 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="Tk3-ja-aDA" kind="relationship" relationship="rootViewController" id="BEN-I1-uFK"/>
+                        <segue destination="83z-46-6Ob" kind="relationship" relationship="rootViewController" id="DDb-ub-bVU"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BHp-Tp-8Ol" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="765.60000000000002" y="132.68365817091455"/>
+        </scene>
+        <!--JustDoIt-->
+        <scene sceneID="esD-mp-nPh">
+            <objects>
+                <tableViewController id="83z-46-6Ob" customClass="CategoryViewController" customModule="JustDoIt" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="dtr-zN-ddJ" customClass="CategoryViewController">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CategoryCell" id="hFP-RQ-Zaj">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="hFP-RQ-Zaj" id="9Qq-tw-l1n">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="83z-46-6Ob" id="NUt-dU-qgG"/>
+                            <outlet property="delegate" destination="83z-46-6Ob" id="mNn-bS-NoU"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="JustDoIt" id="Pfk-RG-Mt9">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="DFL-kb-9eV">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <action selector="addButtonPressed:" destination="83z-46-6Ob" id="Sa1-Zb-ACt"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <segue destination="Tk3-ja-aDA" kind="show" identifier="goToItems" id="aKL-pq-Vci"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9M1-Fx-HLK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1806" y="133"/>
         </scene>
     </scenes>
 </document>
