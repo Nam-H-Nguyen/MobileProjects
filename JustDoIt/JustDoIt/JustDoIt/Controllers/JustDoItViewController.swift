@@ -15,6 +15,14 @@ class JustDoItViewController: UITableViewController {
 //    var itemArray = ["Finish JustDoIt App", "Work on Assignment #2", "Go through Data Structure Code"]
     var itemArray = [Item]()
     
+    // Attribute used when the category is selected
+    var selectedCategory : Category? {
+        didSet {
+            loadItems()
+        }
+    }
+    
+    // Access a singleton as AppDelegate to tap into persistent container lazy var
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
     override func viewDidLoad() {
@@ -22,7 +30,6 @@ class JustDoItViewController: UITableViewController {
         
         print(FileManager.default.urls(for: .documentDirectory, in: .userDomainMask))
         
-        loadItems()
     }
 
     //MARK - Tableview Datasource Methods
@@ -70,6 +77,7 @@ class JustDoItViewController: UITableViewController {
             let newItem = Item(context: self.context)
             newItem.title = textField.text!
             newItem.done = false
+            newItem.parentCategory = self.selectedCategory
             self.itemArray.append(newItem) // append user input from the alert
             
             self.saveItems()
@@ -100,7 +108,17 @@ class JustDoItViewController: UITableViewController {
     // Read part in CRUD in CoreData
     // with = external parameter, request = internal parameter
     // =Item.fetchRequest() is a default value if we don't pass in any initialized value
-    func loadItems(with request : NSFetchRequest<Item> = Item.fetchRequest()) {
+    func loadItems(with request : NSFetchRequest<Item> = Item.fetchRequest(), predicate: NSPredicate? = nil) {
+        // Ensure loaded item matches with the parent category
+        let categoryPredicate = NSPredicate(format: "parentCategory.name MATCHES %@", selectedCategory!.name!)
+        
+        // Optional binding to make sure never unwrapping nil value
+        if let additionalPredicate = predicate {
+            request.predicate = NSCompoundPredicate(andPredicateWithSubpredicates: [categoryPredicate, additionalPredicate])
+        } else {
+            request.predicate = categoryPredicate
+        }
+        
         // Fetch data from persistent container
         do {
             // save the fetch to itemArray
@@ -108,6 +126,8 @@ class JustDoItViewController: UITableViewController {
         } catch {
             print("Error fetching data from context \(error)")
         }
+        
+        tableView.reloadData()
     }
     
 }
@@ -121,22 +141,24 @@ extension JustDoItViewController: UISearchBarDelegate {
         let request : NSFetchRequest<Item> = Item.fetchRequest()
         
         // Query using the searchBar.text that user types in, %@ substitues any arguments passed in
-        request.predicate = NSPredicate(format: "title CONTAINS[cd] %@", searchBar.text!)
+        let predicate = NSPredicate(format: "title CONTAINS[cd] %@", searchBar.text!)
         
         request.sortDescriptors = [NSSortDescriptor(key: "title", ascending: true)]
         
-        loadItems(with: request)
+        loadItems(with: request, predicate: predicate)
     }
     
     // Once search bar is cleared, load all the items again
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         if searchBar.text?.count == 0 {
+            loadItems()
+            
             // Get rid of keyboard and cursor
             DispatchQueue.main.async {
                 // Keyboard to dismiss after clearing search bar
                 searchBar.resignFirstResponder()
             }
-            loadItems()
+            
         }
     }
 }
