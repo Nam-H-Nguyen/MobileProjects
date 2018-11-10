@@ -61,6 +61,7 @@ class JustDoItViewController: UITableViewController {
             do {
                 try realm.write {
                     item.done = !item.done  // toggles checkmarks in item list
+//                    realm.delete(item)
                 }
             } catch {
                 print("Error saving done status \(error)")
@@ -94,6 +95,7 @@ class JustDoItViewController: UITableViewController {
                     try self.realm.write {
                         let newItem = Item()
                         newItem.title = textField.text!
+                        newItem.dateCreated = Date()
                         currentCategory.items.append(newItem)
                     }
                 } catch {
@@ -132,25 +134,7 @@ class JustDoItViewController: UITableViewController {
 //    func loadItems(with request : NSFetchRequest<Item> = Item.fetchRequest(), predicate: NSPredicate? = nil) {
     func loadItems() {
         
-        todoItems = selectedCategory?.items.sorted(byKeyPath: "title", ascending: true)
-        
-//        // Ensure loaded item matches with the parent category
-//        let categoryPredicate = NSPredicate(format: "parentCategory.name MATCHES %@", selectedCategory!.name!)
-//
-//        // Optional binding to make sure never unwrapping nil value
-//        if let additionalPredicate = predicate {
-//            request.predicate = NSCompoundPredicate(andPredicateWithSubpredicates: [categoryPredicate, additionalPredicate])
-//        } else {
-//            request.predicate = categoryPredicate
-//        }
-//
-//        // Fetch data from persistent container
-//        do {
-//            // save the fetch to todoItems
-//            todoItems = try context.fetch(request)
-//        } catch {
-//            print("Error fetching data from context \(error)")
-//        }
+        todoItems = selectedCategory?.items.sorted(byKeyPath: "dateCreated", ascending: true)
         
         tableView.reloadData()
     }
@@ -159,32 +143,26 @@ class JustDoItViewController: UITableViewController {
 
 //MARK: - Search Bar methods
 // Extension modularizes code for Search Bar
-//extension JustDoItViewController: UISearchBarDelegate {
-//    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-//
-//        // Fetches data
-//        let request : NSFetchRequest<Item> = Item.fetchRequest()
-//
-//        // Query using the searchBar.text that user types in, %@ substitues any arguments passed in
-//        let predicate = NSPredicate(format: "title CONTAINS[cd] %@", searchBar.text!)
-//
-//        request.sortDescriptors = [NSSortDescriptor(key: "title", ascending: true)]
-//
-//        loadItems(with: request, predicate: predicate)
-//    }
-//
-//    // Once search bar is cleared, load all the items again
-//    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-//        if searchBar.text?.count == 0 {
-//            loadItems()
-//
-//            // Get rid of keyboard and cursor
-//            DispatchQueue.main.async {
-//                // Keyboard to dismiss after clearing search bar
-//                searchBar.resignFirstResponder()
-//            }
-//
-//        }
-//    }
-//}
+extension JustDoItViewController: UISearchBarDelegate {
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        
+        todoItems = todoItems?.filter("title CONTAINS[cd] %@", searchBar.text!).sorted(byKeyPath: "dateCreated", ascending: true)
+        
+        tableView.reloadData()
+    }
+
+    // Once search bar is cleared, load all the items again
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        if searchBar.text?.count == 0 {
+            loadItems()
+
+            // Get rid of keyboard and cursor
+            DispatchQueue.main.async {
+                // Keyboard to dismiss after clearing search bar
+                searchBar.resignFirstResponder()
+            }
+
+        }
+    }
+}
 
