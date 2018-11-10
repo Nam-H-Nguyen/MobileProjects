@@ -8,19 +8,22 @@
 
 /* Begin PBXBuildFile section */
 		3FA5243059D074CA896F17DF /* Pods_JustDoIt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A18743D0032D6FC2C62EF79 /* Pods_JustDoIt.framework */; };
+		CD1D3821219644F1007B1853 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD1D3820219644F1007B1853 /* Item.swift */; };
+		CD1D3823219644FB007B1853 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD1D3822219644FB007B1853 /* Category.swift */; };
 		CD1F9A3121918B21008AFD51 /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD1F9A3021918B21008AFD51 /* CategoryViewController.swift */; };
 		CD5031BF218B79320010A858 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD5031BE218B79320010A858 /* AppDelegate.swift */; };
 		CD5031C1218B79320010A858 /* JustDoItViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD5031C0218B79320010A858 /* JustDoItViewController.swift */; };
 		CD5031C4218B79320010A858 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD5031C2218B79320010A858 /* Main.storyboard */; };
 		CD5031C6218B79350010A858 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CD5031C5218B79350010A858 /* Assets.xcassets */; };
 		CD5031C9218B79350010A858 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD5031C7218B79350010A858 /* LaunchScreen.storyboard */; };
-		CD5031D8218BE19E0010A858 /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CD5031D6218BE19E0010A858 /* DataModel.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		2E7CA65FE7E2502B82338CA9 /* Pods-JustDoIt.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JustDoIt.release.xcconfig"; path = "Target Support Files/Pods-JustDoIt/Pods-JustDoIt.release.xcconfig"; sourceTree = "<group>"; };
 		2F350619694785EE98002668 /* Pods-JustDoIt.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JustDoIt.debug.xcconfig"; path = "Target Support Files/Pods-JustDoIt/Pods-JustDoIt.debug.xcconfig"; sourceTree = "<group>"; };
 		8A18743D0032D6FC2C62EF79 /* Pods_JustDoIt.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JustDoIt.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CD1D3820219644F1007B1853 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		CD1D3822219644FB007B1853 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		CD1F9A3021918B21008AFD51 /* CategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewController.swift; sourceTree = "<group>"; };
 		CD5031BB218B79320010A858 /* JustDoIt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JustDoIt.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD5031BE218B79320010A858 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -29,7 +32,6 @@
 		CD5031C5218B79350010A858 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CD5031C8218B79350010A858 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CD5031CA218B79350010A858 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		CD5031D7218BE19E0010A858 /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,7 +52,6 @@
 				2F350619694785EE98002668 /* Pods-JustDoIt.debug.xcconfig */,
 				2E7CA65FE7E2502B82338CA9 /* Pods-JustDoIt.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -96,7 +97,8 @@
 		CD5031D2218BCA310010A858 /* Data Model */ = {
 			isa = PBXGroup;
 			children = (
-				CD5031D6218BE19E0010A858 /* DataModel.xcdatamodeld */,
+				CD1D3822219644FB007B1853 /* Category.swift */,
+				CD1D3820219644F1007B1853 /* Item.swift */,
 			);
 			path = "Data Model";
 			sourceTree = "<group>";
@@ -251,8 +253,9 @@
 			files = (
 				CD1F9A3121918B21008AFD51 /* CategoryViewController.swift in Sources */,
 				CD5031C1218B79320010A858 /* JustDoItViewController.swift in Sources */,
-				CD5031D8218BE19E0010A858 /* DataModel.xcdatamodeld in Sources */,
+				CD1D3821219644F1007B1853 /* Item.swift in Sources */,
 				CD5031BF218B79320010A858 /* AppDelegate.swift in Sources */,
+				CD1D3823219644FB007B1853 /* Category.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -454,19 +457,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		CD5031D6218BE19E0010A858 /* DataModel.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				CD5031D7218BE19E0010A858 /* DataModel.xcdatamodel */,
-			);
-			currentVersion = CD5031D7218BE19E0010A858 /* DataModel.xcdatamodel */;
-			path = DataModel.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = CD5031B3218B79320010A858 /* Project object */;
 }
