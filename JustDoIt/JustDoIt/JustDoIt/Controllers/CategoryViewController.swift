@@ -15,8 +15,6 @@ class CategoryViewController: UITableViewController {
     
     var categories: Results<Category>?
     
-//    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -67,15 +65,6 @@ class CategoryViewController: UITableViewController {
     }
     
     func loadCategories() {
-        
-//        let request : NSFetchRequest<Category> = Category.fetchRequest()
-//        do {
-//            categories = try context.fetch(request)
-//        } catch {
-//            print("Error loading category \(error)")
-//        }
-//
-        
         // Pull out all items inside Realm that are of Category Objects
         categories = realm.objects(Category.self)
         
@@ -92,9 +81,6 @@ class CategoryViewController: UITableViewController {
             
             let newCategory = Category()
             newCategory.name = textField.text!
-            
-            // Do not need to append, because Result data type auto-updates
-//            self.categories.append(newCategory)
             
             self.save(category: newCategory)
         }

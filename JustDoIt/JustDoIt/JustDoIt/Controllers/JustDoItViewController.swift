@@ -24,9 +24,6 @@ class JustDoItViewController: UITableViewController {
         }
     }
     
-    // Access a singleton as AppDelegate to tap into persistent container lazy var
-//    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -69,16 +66,6 @@ class JustDoItViewController: UITableViewController {
         }
         
         tableView.reloadData()
-        // Delete part in CRUD
-//        context.delete(todoItems[indexPath.row])
-//        todoItems.remove(at: indexPath.row)
-        // If user clicks on the cell that already has a checkmark, then it dechecks the checkmark
-//        itemArray[indexPath.row].done = !itemArray[indexPath.row].done  // Updates the checkmarks
-        
-//        saveItems()
-        
-        // Once you deselect it won't highlight in gray anymore
-//        tableView.deselectRow(at: indexPath, animated: true)
     }
     
     @IBAction func addButtonPressed(_ sender: UIBarButtonItem) {
@@ -116,22 +103,6 @@ class JustDoItViewController: UITableViewController {
         present(alert, animated: true, completion: nil)
     }
     
-    // Create part in CRUD in CoreData
-//    func saveItems() {
-//
-//        do {
-//            try context.save()
-//        } catch {
-//            print("Error saving context \(error)")
-//        }
-//
-//        self.tableView.reloadData()
-//    }
-    
-    // Read part in CRUD in CoreData
-    // with = external parameter, request = internal parameter
-    // =Item.fetchRequest() is a default value if we don't pass in any initialized value
-//    func loadItems(with request : NSFetchRequest<Item> = Item.fetchRequest(), predicate: NSPredicate? = nil) {
     func loadItems() {
         
         todoItems = selectedCategory?.items.sorted(byKeyPath: "dateCreated", ascending: true)
