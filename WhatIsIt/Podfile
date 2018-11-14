@@ -4,6 +4,5 @@ target 'WhatIsIt' do
   use_frameworks!
 
   # Pods for WhatIsIt
-pod 'TwitterKit'
-
+  
 end

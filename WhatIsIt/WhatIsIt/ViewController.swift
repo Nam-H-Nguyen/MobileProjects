@@ -9,7 +9,6 @@
 import UIKit
 import VisualRecognitionV3
 import SVProgressHUD
-//import TwitterKit
 
 class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
@@ -69,7 +68,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
                 DispatchQueue.main.async {
                     self.cameraButton.isEnabled = true
                     SVProgressHUD.dismiss()
-//                    self.shareButton.isHidden = false
+                    self.shareButton.isHidden = false
                 }
 //                if self.classificationResults.contains("hotdog") {
                     DispatchQueue.main.async {
@@ -103,20 +102,13 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     @IBAction func shareTapped(_ sender: UIButton) {
         
-//        TWTRTwitter.sharedInstance().start(withConsumerKey:consumerSecret:)
-//        let composer = TWTRComposer()
-//
-//        composer.setText("Using IBM Watson to do cool visual recognition stuff!")
-//        composer.setImage(UIImage(named: "ibm_watson"))
-//
-//        // Called from a UIViewController
-//        composer.show(from: self.navigationController!) { (result) in
-//            if (result == .done) {
-//            print("Successfully composed Tweet")
-//            } else {
-//            print("Cancelled composing")
-//            }
-//        }
+//        guard let image = UIImage(ciImage: imageView?.image) else {(fatalError())}
+        let activityItem: [Any] = ["I played with IBM Watson's Visual Recognition Machine Learning today", URL(string: "https://www.ibm.com/watson/services/visual-recognition/")!]
+        
+        let share = UIActivityViewController(activityItems: [activityItem],  applicationActivities: nil)
+        
+        present(share, animated: true, completion: nil)
+        
     }
 }
 

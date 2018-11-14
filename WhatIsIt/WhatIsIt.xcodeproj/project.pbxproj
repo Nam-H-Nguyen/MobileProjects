@@ -50,6 +50,7 @@
 		CDC8D8C8219A07010031C172 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CDC8D8CB219A07010031C172 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CDC8D8CD219A07010031C172 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CDF91451219C86FD00655AC5 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4F7C2790CAA3424E5EA262F /* Pods_WhatIsIt.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WhatIsIt.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -71,6 +72,7 @@
 		935670839DF4F41FA672BF7A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				CDF91451219C86FD00655AC5 /* FBSDKCoreKit.framework */,
 				E4F7C2790CAA3424E5EA262F /* Pods_WhatIsIt.framework */,
 			);
 			name = Frameworks;
@@ -82,7 +84,6 @@
 				1294573D5CAC50F2BCED3A8D /* Pods-WhatIsIt.debug.xcconfig */,
 				3A06F6D50117F98E4D93C34F /* Pods-WhatIsIt.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -132,8 +133,6 @@
 				CDC8D8BB219A06FE0031C172 /* Frameworks */,
 				CDC8D8BC219A06FE0031C172 /* Resources */,
 				CD2CE32F219A0CA9007EB89E /* Embed Frameworks */,
-				67ED57CBB967C1F0BD05392A /* [CP] Embed Pods Frameworks */,
-				00D250898C6318FBCBA2A22F /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -191,52 +190,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		00D250898C6318FBCBA2A22F /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-WhatIsIt/Pods-WhatIsIt-resources.sh",
-				"${PODS_ROOT}/TwitterKit/iOS/TwitterKit.framework/TwitterKitResources.bundle",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/TwitterKitResources.bundle",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-WhatIsIt/Pods-WhatIsIt-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		67ED57CBB967C1F0BD05392A /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-WhatIsIt/Pods-WhatIsIt-frameworks.sh",
-				"${PODS_ROOT}/TwitterCore/iOS/TwitterCore.framework",
-				"${PODS_ROOT}/TwitterKit/iOS/TwitterKit.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TwitterCore.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TwitterKit.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-WhatIsIt/Pods-WhatIsIt-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		F31482A72CE5ED48A01ECD69 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
