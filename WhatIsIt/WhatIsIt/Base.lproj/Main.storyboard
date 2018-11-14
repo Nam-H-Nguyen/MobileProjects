@@ -18,16 +18,49 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="S98-fW-GE3">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ibm_watson" translatesAutoresizingMaskIntoConstraints="NO" id="ZLi-LE-UXv" userLabel="IBM Watson">
+                                <rect key="frame" x="75" y="221" width="225" height="225"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="S98-fW-GE3" userLabel="User Picked Image">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                             </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="PDS-em-YYE">
+                                <rect key="frame" x="0.0" y="64" width="375" height="90"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="90" id="E4L-TW-Fdb"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZO2-XQ-XWM">
+                                <rect key="frame" x="106" y="523" width="163" height="53"/>
+                                <color key="backgroundColor" red="0.42352941176470588" green="0.90196078431372551" blue="0.47450980392156861" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="35"/>
+                                <state key="normal" title="Share">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <integer key="value" value="15"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="shareTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="l3W-bb-KNR"/>
+                                </connections>
+                            </button>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.0" green="0.20784313725490194" blue="0.32941176470588235" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="PDS-em-YYE" secondAttribute="trailing" id="BK9-HB-3Bf"/>
+                            <constraint firstItem="ZLi-LE-UXv" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="JAV-jo-sXa"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="S98-fW-GE3" secondAttribute="trailing" id="Oup-78-fo4"/>
+                            <constraint firstItem="ZLi-LE-UXv" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Ozq-uO-tvl"/>
+                            <constraint firstItem="PDS-em-YYE" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="aiv-wF-bmz"/>
                             <constraint firstItem="S98-fW-GE3" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="bOh-vy-VJN"/>
+                            <constraint firstItem="PDS-em-YYE" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="hdN-ou-GeD"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="S98-fW-GE3" secondAttribute="bottom" id="iR3-0X-LmU"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="ZO2-XQ-XWM" secondAttribute="bottom" constant="91" id="lNG-TB-7Dm"/>
                             <constraint firstItem="S98-fW-GE3" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="p7r-n5-Y7Z"/>
+                            <constraint firstItem="ZO2-XQ-XWM" firstAttribute="centerX" secondItem="PDS-em-YYE" secondAttribute="centerX" id="tda-kr-Ag1"/>
+                            <constraint firstItem="ZO2-XQ-XWM" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="106" id="wkW-Hu-lwt"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -41,6 +74,8 @@
                     <connections>
                         <outlet property="cameraButton" destination="53y-bQ-Ga8" id="Mjs-4I-3wv"/>
                         <outlet property="imageView" destination="S98-fW-GE3" id="BOt-ET-vfH"/>
+                        <outlet property="shareButton" destination="ZO2-XQ-XWM" id="wHI-qm-NR5"/>
+                        <outlet property="topBarImageView" destination="PDS-em-YYE" id="33d-7d-8P5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -55,6 +90,9 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Bfi-xr-mSY">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -66,4 +104,7 @@
             <point key="canvasLocation" x="169" y="133"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="ibm_watson" width="225" height="225"/>
+    </resources>
 </document>

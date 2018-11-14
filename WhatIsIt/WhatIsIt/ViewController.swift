@@ -9,12 +9,15 @@
 import UIKit
 import VisualRecognitionV3
 import SVProgressHUD
+import Social
 
 class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
     let apiKey = "d_l-W2GxtZXo1DsT5yANb3qom8-R6rfisx70G2AVirwe"
     let version = "2018-11-12"
     
+    @IBOutlet weak var shareButton: UIButton!
+    @IBOutlet weak var topBarImageView: UIImageView!
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var cameraButton: UIBarButtonItem!
     
@@ -24,6 +27,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        shareButton.isHidden = true
         imagePicker.delegate = self
     }
     
@@ -65,10 +69,14 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
                 DispatchQueue.main.async {
                     self.cameraButton.isEnabled = true
                     SVProgressHUD.dismiss()
+                    self.shareButton.isHidden = false
                 }
 //                if self.classificationResults.contains("hotdog") {
                     DispatchQueue.main.async {
                         self.navigationItem.title = classes[0].className
+                        self.navigationController?.navigationBar.barTintColor = UIColor(red: 108.0/255.0, green: 230.0/255.0, blue: 121.0/255.0, alpha: 1.0)
+                        self.navigationController?.navigationBar.isTranslucent = false
+                        self.topBarImageView.image = UIImage(named: "ok")
                     }
 //                } else {
 //                    DispatchQueue.main.async {
@@ -93,5 +101,15 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         present(imagePicker, animated: true, completion: nil)
     }
     
+    @IBAction func shareTapped(_ sender: UIButton) {
+//        if SLComposeViewController.isAvailable(forServiceType: SLServiceTypeTwitter) {
+//            let vc = SLComposeViewController(forServiceType: SLServiceTypeTwitter)
+//            vc?.setInitialText("IBM Watson says this is a: \(navigationItem.title)")
+//            vc?.add(ibm_watson)
+//            present(vc!, animated: true, completion: nil)
+//        } else {
+//            self.navigationItem.title = "Please login to twitter"
+//        }
+    }
 }
 
