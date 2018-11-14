@@ -9,7 +9,7 @@
 import UIKit
 import VisualRecognitionV3
 import SVProgressHUD
-import Social
+//import TwitterKit
 
 class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
@@ -69,7 +69,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
                 DispatchQueue.main.async {
                     self.cameraButton.isEnabled = true
                     SVProgressHUD.dismiss()
-                    self.shareButton.isHidden = false
+//                    self.shareButton.isHidden = false
                 }
 //                if self.classificationResults.contains("hotdog") {
                     DispatchQueue.main.async {
@@ -102,13 +102,20 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     }
     
     @IBAction func shareTapped(_ sender: UIButton) {
-//        if SLComposeViewController.isAvailable(forServiceType: SLServiceTypeTwitter) {
-//            let vc = SLComposeViewController(forServiceType: SLServiceTypeTwitter)
-//            vc?.setInitialText("IBM Watson says this is a: \(navigationItem.title)")
-//            vc?.add(ibm_watson)
-//            present(vc!, animated: true, completion: nil)
-//        } else {
-//            self.navigationItem.title = "Please login to twitter"
+        
+//        TWTRTwitter.sharedInstance().start(withConsumerKey:consumerSecret:)
+//        let composer = TWTRComposer()
+//
+//        composer.setText("Using IBM Watson to do cool visual recognition stuff!")
+//        composer.setImage(UIImage(named: "ibm_watson"))
+//
+//        // Called from a UIViewController
+//        composer.show(from: self.navigationController!) { (result) in
+//            if (result == .done) {
+//            print("Successfully composed Tweet")
+//            } else {
+//            print("Cancelled composing")
+//            }
 //        }
     }
 }

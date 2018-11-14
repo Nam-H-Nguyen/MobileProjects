@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1DDE3F171A3D1E04BE413904 /* Pods_WhatIsIt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4F7C2790CAA3424E5EA262F /* Pods_WhatIsIt.framework */; };
 		CD2CE329219A0CA9007EB89E /* RestKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD2CE326219A0CA9007EB89E /* RestKit.framework */; };
 		CD2CE32A219A0CA9007EB89E /* RestKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CD2CE326219A0CA9007EB89E /* RestKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		CD2CE32B219A0CA9007EB89E /* SVProgressHUD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD2CE327219A0CA9007EB89E /* SVProgressHUD.framework */; };
@@ -37,6 +38,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		1294573D5CAC50F2BCED3A8D /* Pods-WhatIsIt.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WhatIsIt.debug.xcconfig"; path = "Target Support Files/Pods-WhatIsIt/Pods-WhatIsIt.debug.xcconfig"; sourceTree = "<group>"; };
+		3A06F6D50117F98E4D93C34F /* Pods-WhatIsIt.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WhatIsIt.release.xcconfig"; path = "Target Support Files/Pods-WhatIsIt/Pods-WhatIsIt.release.xcconfig"; sourceTree = "<group>"; };
 		CD2CE326219A0CA9007EB89E /* RestKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RestKit.framework; path = Carthage/Build/iOS/RestKit.framework; sourceTree = "<group>"; };
 		CD2CE327219A0CA9007EB89E /* SVProgressHUD.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SVProgressHUD.framework; path = Carthage/Build/iOS/SVProgressHUD.framework; sourceTree = "<group>"; };
 		CD2CE328219A0CA9007EB89E /* VisualRecognitionV3.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = VisualRecognitionV3.framework; path = Carthage/Build/iOS/VisualRecognitionV3.framework; sourceTree = "<group>"; };
@@ -47,6 +50,7 @@
 		CDC8D8C8219A07010031C172 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CDC8D8CB219A07010031C172 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CDC8D8CD219A07010031C172 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E4F7C2790CAA3424E5EA262F /* Pods_WhatIsIt.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WhatIsIt.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,12 +61,31 @@
 				CD2CE32B219A0CA9007EB89E /* SVProgressHUD.framework in Frameworks */,
 				CD2CE32D219A0CA9007EB89E /* VisualRecognitionV3.framework in Frameworks */,
 				CD2CE329219A0CA9007EB89E /* RestKit.framework in Frameworks */,
+				1DDE3F171A3D1E04BE413904 /* Pods_WhatIsIt.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		935670839DF4F41FA672BF7A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E4F7C2790CAA3424E5EA262F /* Pods_WhatIsIt.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BD58C3F5B75DE1A91CAB070D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				1294573D5CAC50F2BCED3A8D /* Pods-WhatIsIt.debug.xcconfig */,
+				3A06F6D50117F98E4D93C34F /* Pods-WhatIsIt.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		CDC8D8B5219A06FE0031C172 = {
 			isa = PBXGroup;
 			children = (
@@ -71,6 +94,8 @@
 				CD2CE328219A0CA9007EB89E /* VisualRecognitionV3.framework */,
 				CDC8D8C0219A06FE0031C172 /* WhatIsIt */,
 				CDC8D8BF219A06FE0031C172 /* Products */,
+				BD58C3F5B75DE1A91CAB070D /* Pods */,
+				935670839DF4F41FA672BF7A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -102,10 +127,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CDC8D8D0219A07010031C172 /* Build configuration list for PBXNativeTarget "WhatIsIt" */;
 			buildPhases = (
+				F31482A72CE5ED48A01ECD69 /* [CP] Check Pods Manifest.lock */,
 				CDC8D8BA219A06FE0031C172 /* Sources */,
 				CDC8D8BB219A06FE0031C172 /* Frameworks */,
 				CDC8D8BC219A06FE0031C172 /* Resources */,
 				CD2CE32F219A0CA9007EB89E /* Embed Frameworks */,
+				67ED57CBB967C1F0BD05392A /* [CP] Embed Pods Frameworks */,
+				00D250898C6318FBCBA2A22F /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -161,6 +189,77 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		00D250898C6318FBCBA2A22F /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-WhatIsIt/Pods-WhatIsIt-resources.sh",
+				"${PODS_ROOT}/TwitterKit/iOS/TwitterKit.framework/TwitterKitResources.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/TwitterKitResources.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-WhatIsIt/Pods-WhatIsIt-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		67ED57CBB967C1F0BD05392A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-WhatIsIt/Pods-WhatIsIt-frameworks.sh",
+				"${PODS_ROOT}/TwitterCore/iOS/TwitterCore.framework",
+				"${PODS_ROOT}/TwitterKit/iOS/TwitterKit.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TwitterCore.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TwitterKit.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-WhatIsIt/Pods-WhatIsIt-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F31482A72CE5ED48A01ECD69 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-WhatIsIt-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		CDC8D8BA219A06FE0031C172 /* Sources */ = {
@@ -312,6 +411,7 @@
 		};
 		CDC8D8D1219A07010031C172 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1294573D5CAC50F2BCED3A8D /* Pods-WhatIsIt.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -334,6 +434,7 @@
 		};
 		CDC8D8D2219A07010031C172 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3A06F6D50117F98E4D93C34F /* Pods-WhatIsIt.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
