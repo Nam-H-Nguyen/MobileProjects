@@ -12,6 +12,7 @@ import Vision   // Allow image processing more easily
 
 class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
+    @IBOutlet weak var topBarImageView: UIImageView!
     @IBOutlet weak var imageView: UIImageView!
     
     let imagePicker = UIImagePickerController() // object of the class ImagePickerController
@@ -71,8 +72,14 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             if let firstResult = results.first {
                 if firstResult.identifier.contains("hotdog") {
                     self.navigationItem.title = "Hotdog!"
+                    self.navigationController?.navigationBar.barTintColor = UIColor.green
+                    self.navigationController?.navigationBar.isTranslucent = false
+                    self.topBarImageView.image = UIImage(named:"hotdog")
                 } else {
                     self.navigationItem.title = "Not Hotdog!"
+                    self.navigationController?.navigationBar.barTintColor = UIColor.red
+                    self.navigationController?.navigationBar.isTranslucent = false
+                    self.topBarImageView.image = UIImage(named:"not-hotdog")
                 }
             }
         }
