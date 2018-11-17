@@ -19,9 +19,6 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ibm_watson" translatesAutoresizingMaskIntoConstraints="NO" id="ZLi-LE-UXv" userLabel="IBM Watson">
-                                <rect key="frame" x="75" y="221" width="225" height="225"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="S98-fW-GE3" userLabel="User Picked Image">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="PDS-em-YYE">
@@ -46,20 +43,25 @@
                                     <action selector="shareTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="l3W-bb-KNR"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="S98-fW-GE3" userLabel="User Picked Image">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.20784313725490194" blue="0.32941176470588235" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="ZLi-LE-UXv" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Ai0-lt-cCc"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="PDS-em-YYE" secondAttribute="trailing" id="BK9-HB-3Bf"/>
-                            <constraint firstItem="ZLi-LE-UXv" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="JAV-jo-sXa"/>
+                            <constraint firstItem="ZLi-LE-UXv" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Gar-hV-Lsv"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="S98-fW-GE3" secondAttribute="trailing" id="Oup-78-fo4"/>
-                            <constraint firstItem="ZLi-LE-UXv" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Ozq-uO-tvl"/>
                             <constraint firstItem="PDS-em-YYE" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="aiv-wF-bmz"/>
                             <constraint firstItem="S98-fW-GE3" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="bOh-vy-VJN"/>
                             <constraint firstItem="PDS-em-YYE" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="hdN-ou-GeD"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="S98-fW-GE3" secondAttribute="bottom" id="iR3-0X-LmU"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="ZO2-XQ-XWM" secondAttribute="bottom" constant="91" id="lNG-TB-7Dm"/>
                             <constraint firstItem="S98-fW-GE3" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="p7r-n5-Y7Z"/>
+                            <constraint firstItem="ZLi-LE-UXv" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="ppv-M6-kZ4"/>
                             <constraint firstItem="ZO2-XQ-XWM" firstAttribute="centerX" secondItem="PDS-em-YYE" secondAttribute="centerX" id="tda-kr-Ag1"/>
+                            <constraint firstItem="ZLi-LE-UXv" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="wTO-NJ-peR"/>
                             <constraint firstItem="ZO2-XQ-XWM" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="106" id="wkW-Hu-lwt"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -105,6 +107,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="ibm_watson" width="225" height="225"/>
+        <image name="ibm_watson" width="1280" height="720"/>
     </resources>
 </document>

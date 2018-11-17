@@ -1,0 +1,19 @@
+## WhatIsIt
+![Finished App](https://github.com/Nam-H-Nguyen/Quiz-Me-iOS-App/blob/master/quizme-app.gif "WhatIsIt iOS app written in Swift 4/iOS 12")
+
+
+### Steps to run the 📱 app: ###
+
+1. Open Terminal
+2. Change directory to where you want to clone the file
+3. Type `git clone https://github.com/Nam-H-Nguyen/Quiz-Me-iOS-App.git`
+- - - -
+OR download the zip file
+- - - -
+4. Open the folder Quiz-Me-iOS-App__
+5. Double click the file "QuizMe.xcodeproj"
+6. Press two keys simultaneously __CMD + R__ to run the app
+7. Finally . . . Have fun with the app!
+
+Third Party Code Library used:
+[ProgressHUD](https://github.com/relatedcode/ProgressHUD)
