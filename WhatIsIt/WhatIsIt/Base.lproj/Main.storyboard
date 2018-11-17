@@ -21,6 +21,16 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ibm_watson" translatesAutoresizingMaskIntoConstraints="NO" id="ZLi-LE-UXv" userLabel="IBM Watson">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                             </imageView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Take a picture of any object!" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="BQB-Kv-uID">
+                                <rect key="frame" x="67.5" y="64" width="240" height="78"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="78" id="7GN-1c-IgF"/>
+                                    <constraint firstAttribute="width" constant="240" id="8KY-Ev-zhh"/>
+                                </constraints>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="S98-fW-GE3" userLabel="User Picked Image">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                             </imageView>
@@ -53,6 +63,8 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="PDS-em-YYE" secondAttribute="trailing" id="BK9-HB-3Bf"/>
                             <constraint firstItem="ZLi-LE-UXv" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Gar-hV-Lsv"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="S98-fW-GE3" secondAttribute="trailing" id="Oup-78-fo4"/>
+                            <constraint firstItem="BQB-Kv-uID" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Pac-Sd-uWB"/>
+                            <constraint firstItem="BQB-Kv-uID" firstAttribute="centerX" secondItem="PDS-em-YYE" secondAttribute="centerX" id="USx-J4-1Ho"/>
                             <constraint firstItem="PDS-em-YYE" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="aiv-wF-bmz"/>
                             <constraint firstItem="S98-fW-GE3" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="bOh-vy-VJN"/>
                             <constraint firstItem="PDS-em-YYE" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="hdN-ou-GeD"/>

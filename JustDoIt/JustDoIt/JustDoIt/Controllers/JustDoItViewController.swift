@@ -8,7 +8,6 @@
 
 import UIKit
 import RealmSwift
-import ChameleonFramework
 
 // Changed the name of the view controller to JustDoItViewController
 class JustDoItViewController: SwipeTableViewController {

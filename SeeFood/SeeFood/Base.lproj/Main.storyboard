@@ -18,24 +18,41 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gPC-FM-Lrx">
-                                <rect key="frame" x="0.0" y="116" width="375" height="551"/>
-                                <color key="backgroundColor" red="0.43759533066377326" green="0.92766978080392581" blue="0.99810093641281128" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Take a picture of any object! Google-InceptionV3  " textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="ifU-y5-gl9">
+                                <rect key="frame" x="16" y="64" width="343" height="163"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="hotdog-1" translatesAutoresizingMaskIntoConstraints="NO" id="uuZ-FT-wfE">
+                                <rect key="frame" x="67" y="212" width="241" height="243"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gPC-FM-Lrx" userLabel="User Picked Image">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="KcE-AN-EJN" userLabel="Top Bar Image View">
-                                <rect key="frame" x="67" y="116" width="241" height="80"/>
+                                <rect key="frame" x="67" y="64" width="241" height="80"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="80" id="4pg-oT-fod"/>
                                 </constraints>
                             </imageView>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="KcE-AN-EJN" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="9pk-eM-e12"/>
                             <constraint firstItem="gPC-FM-Lrx" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="9rO-4M-v7k"/>
+                            <constraint firstItem="ifU-y5-gl9" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="AWw-Qb-d9X"/>
                             <constraint firstItem="gPC-FM-Lrx" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="AnS-Ig-SS5"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="ifU-y5-gl9" secondAttribute="bottom" constant="440" id="Dmd-bA-8dw"/>
+                            <constraint firstItem="ifU-y5-gl9" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="Mty-xw-uS3"/>
+                            <constraint firstItem="ifU-y5-gl9" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="WB4-xg-5sc"/>
+                            <constraint firstItem="uuZ-FT-wfE" firstAttribute="leading" secondItem="KcE-AN-EJN" secondAttribute="leading" id="WMv-pC-aaj"/>
                             <constraint firstItem="gPC-FM-Lrx" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Z5T-uj-pIT"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ifU-y5-gl9" secondAttribute="trailing" constant="16" id="bIR-L7-jjn"/>
+                            <constraint firstItem="uuZ-FT-wfE" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="gcZ-UQ-0eP"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="uuZ-FT-wfE" secondAttribute="bottom" constant="212" id="hKJ-Ug-2iT"/>
                             <constraint firstItem="KcE-AN-EJN" firstAttribute="centerX" secondItem="gPC-FM-Lrx" secondAttribute="centerX" id="heh-Xr-OjP"/>
+                            <constraint firstItem="uuZ-FT-wfE" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="vGU-0d-l7t"/>
                             <constraint firstItem="KcE-AN-EJN" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="67" id="whm-vl-S92"/>
                             <constraint firstItem="gPC-FM-Lrx" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="yNJ-QA-nJU"/>
                         </constraints>
@@ -62,10 +79,9 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="mQd-RO-UOv" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="nW2-BU-qAA">
-                        <rect key="frame" x="0.0" y="20" width="375" height="96"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="nW2-BU-qAA">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" red="0.99810093639999997" green="0.43087415350000002" blue="0.22603292380000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <textAttributes key="titleTextAttributes">
                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <color key="textShadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -86,4 +102,7 @@
             <point key="canvasLocation" x="100" y="133"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="hotdog-1" width="491.51998901367188" height="491.51998901367188"/>
+    </resources>
 </document>
