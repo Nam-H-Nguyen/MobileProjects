@@ -3,7 +3,7 @@
 
 ![Finished App](https://github.com/Nam-H-Nguyen/MobileProjects/blob/master/WhatIsIt/Image/share.PNG =500x915)
 
-<img src="https://github.com/Nam-H-Nguyen/MobileProjects/blob/master/WhatIsIt/Image/share.PNG" width="500" height="915" />
+<img src="https://github.com/Nam-H-Nguyen/MobileProjects/blob/master/WhatIsIt/Image/share.PNG" width="50%" height="50%" />
 
 ### Steps to run the 📱 app: ###
 
