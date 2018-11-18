@@ -103,9 +103,10 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     @IBAction func shareTapped(_ sender: UIButton) {
         
 //        guard let image = UIImage(ciImage: imageView?.image) else {(fatalError())}
+        
         let activityItem: [Any] = ["I played with IBM Watson's Visual Recognition Machine Learning today", URL(string: "https://www.ibm.com/watson/services/visual-recognition/")!]
         
-        let share = UIActivityViewController(activityItems: [activityItem],  applicationActivities: nil)
+        let share = UIActivityViewController(activityItems: activityItem,  applicationActivities: nil)
         
         present(share, animated: true, completion: nil)
         
