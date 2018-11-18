@@ -1,5 +1,7 @@
 ## WhatIsIt
-![Finished App](https://media.giphy.com/media/8Z5KpRGlf1f9N8WEHX/giphy.gif "SeeFood iOS app written in Swift 4/iOS 12")
+![Finished App](https://github.com/Nam-H-Nguyen/MobileProjects/blob/master/WhatIsIt/Image/doggo.PNG "SeeFood iOS app written in Swift 4/iOS 12")
+
+![Finished App](https://github.com/Nam-H-Nguyen/MobileProjects/blob/master/WhatIsIt/Image/share.PNG "SeeFood iOS app written in Swift 4/iOS 12")
 
 
 ### Steps to run the 📱 app: ###
