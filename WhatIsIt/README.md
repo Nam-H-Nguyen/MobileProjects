@@ -3,7 +3,9 @@
 
 ![Finished App](https://github.com/Nam-H-Nguyen/MobileProjects/blob/master/WhatIsIt/Image/share.PNG =500x915)
 
-<img src="https://github.com/Nam-H-Nguyen/MobileProjects/blob/master/WhatIsIt/Image/share.PNG" width="25%" height="25%" />
+<img src="https://github.com/Nam-H-Nguyen/MobileProjects/blob/master/WhatIsIt/Image/doggo.PNG" width="10%" height="10%" />
+
+<img src="https://github.com/Nam-H-Nguyen/MobileProjects/blob/master/WhatIsIt/Image/share.PNG" width="15%" height="15%" />
 
 ### Steps to run the 📱 app: ###
 
