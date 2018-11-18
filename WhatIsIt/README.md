@@ -1,5 +1,5 @@
 ## WhatIsIt
-![Finished App](https://github.com/Nam-H-Nguyen/Quiz-Me-iOS-App/blob/master/quizme-app.gif "WhatIsIt iOS app written in Swift 4/iOS 12")
+![Finished App](https://media.giphy.com/media/8Z5KpRGlf1f9N8WEHX/giphy.gif "WhatIsIt iOS app written in Swift 4/iOS 12")
 
 
 ### Steps to run the 📱 app: ###
