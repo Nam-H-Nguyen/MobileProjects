@@ -4,6 +4,8 @@
 
 ![Alt Text](https://media.giphy.com/media/vFKqnCdLPNOKc/giphy.gif)
 
+<img src="https://media.giphy.com/media/1RzBxFb8zxGabJQEiK/giphy.gif" />
+
 ![AR Snake Eyes Dice Roll](https://media.giphy.com/media/1RzBxFb8zxGabJQEiK/giphy.gif )
 
 ![AR Snake Eyes Dice Roll](https://media.giphy.com/media/1RzBxFb8zxGabJQEiK/giphy.gif "Augmented Reality (AR) Snake Eyes Dice Roll iOS App")
