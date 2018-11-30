@@ -92,6 +92,26 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         sceneView.session.pause()
     }
     
+    // Detect touches on the screen
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        // Do not require multi touch, only the first touch the user has made on the screen
+        if let touch = touches.first {
+            
+            // Save the touch location from the sceneView
+            let touchLocation = touch.location(in: sceneView)
+            
+            // Convert 2D touch onto the 3D anchor plane
+            let results = sceneView.hitTest(touchLocation, types: .existingPlaneUsingExtent)
+            
+            // If hit did touch existing plane, print that result
+            if !results.isEmpty {
+                print("Touched the plane")
+            } else {
+                print("Did not touch the plane")
+            }
+        }
+    }
+    
     // Use an anchor to anchor the object onto the horizontal plane in an AR Scene
     func renderer(_ renderer: SCNSceneRenderer, didAdd node: SCNNode, for anchor: ARAnchor) {
         // Check if anchor is on the AR plane
