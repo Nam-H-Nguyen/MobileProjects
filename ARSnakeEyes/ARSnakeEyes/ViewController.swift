@@ -20,32 +20,42 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         // Set the view's delegate
         sceneView.delegate = self
         
-        // Create a cube object (width, height, length, radius are in Meters)
-        let sphere = SCNSphere(radius: 0.2)
-        
-        // Initialize a SCNMaterial
-        let material = SCNMaterial()
-        
-        // Change base color of material to red
-        material.diffuse.contents = UIImage(named: "art.scnassets/moon.jpg")
-        
-        // Array of materials contain the red material contents
-        sphere.materials = [material]
-        
-        // Create node (points in 3-D space)
-        let node = SCNNode()
-        
-        // X, Y, Z vector position
-        node.position = SCNVector3(x: 0, y: 0.1, z: -0.5)
-        
-        // Assign the node an object to display which is the cube
-        node.geometry = sphere
-        
-        // Set the node to be the child of the root to be displayed on the sceneView
-        sceneView.scene.rootNode.addChildNode(node)
+//        // Create a cube object (width, height, length, radius are in Meters)
+//        let sphere = SCNSphere(radius: 0.2)
+//
+//        // Initialize a SCNMaterial
+//        let material = SCNMaterial()
+//
+//        // Change base color of material to red
+//        material.diffuse.contents = UIImage(named: "art.scnassets/moon.jpg")
+//
+//        // Array of materials contain the red material contents
+//        sphere.materials = [material]
+//
+//        // Create node (points in 3-D space)
+//        let node = SCNNode()
+//
+//        // X, Y, Z vector position
+//        node.position = SCNVector3(x: 0, y: 0.1, z: -0.5)
+//
+//        // Assign the node an object to display which is the cube
+//        node.geometry = sphere
+//
+//        // Set the node to be the child of the root to be displayed on the sceneView
+//        sceneView.scene.rootNode.addChildNode(node)
         
         // Makes the object displayed look not flat
         sceneView.autoenablesDefaultLighting = true
+        
+        let diceScene = SCNScene(named: "art.scnassets/diceCollada.scn")!
+        
+        // Recursively look down the tree and include all child nodes of the root node
+        if let diceNode = diceScene.rootNode.childNode(withName: "Dice", recursively: true) {
+            diceNode.position = SCNVector3(x: 0, y: 0, z: -0.1)
+            
+            sceneView.scene.rootNode.addChildNode(diceNode)
+        }
+        
         
     }
     
