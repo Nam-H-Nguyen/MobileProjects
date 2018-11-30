@@ -49,17 +49,6 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         // Makes the object displayed look not flat
         sceneView.autoenablesDefaultLighting = true
         
-//        // Already converted dae file to scn file
-//        let diceScene = SCNScene(named: "art.scnassets/diceCollada.scn")!
-//
-//        // Recursively look down the tree and include all child nodes of the root node
-//        if let diceNode = diceScene.rootNode.childNode(withName: "Dice", recursively: true) {
-//            diceNode.position = SCNVector3(x: 0, y: 0, z: -0.1)
-//
-//            sceneView.scene.rootNode.addChildNode(diceNode)
-//        }
-        
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -103,11 +92,25 @@ class ViewController: UIViewController, ARSCNViewDelegate {
             // Convert 2D touch onto the 3D anchor plane
             let results = sceneView.hitTest(touchLocation, types: .existingPlaneUsingExtent)
             
-            // If hit did touch existing plane, print that result
-            if !results.isEmpty {
-                print("Touched the plane")
-            } else {
-                print("Did not touch the plane")
+            // Print if touch location is within the hit bounding box
+            if let hitResult = results.first {
+                
+                // Already converted dae file to scn file
+                let diceScene = SCNScene(named: "art.scnassets/diceCollada.scn")!
+        
+                // Recursively look down the tree and include all child nodes of the root node
+                if let diceNode = diceScene.rootNode.childNode(withName: "Dice", recursively: true) {
+                    // Input in real world tracking positions where the diceNode will be
+                    diceNode.position = SCNVector3(
+                        // worldTransform is 4x4 matrix scale, rotation, position - the 4th column = position
+                        x: hitResult.worldTransform.columns.3.x,
+                        // Without adding half of the diceNode's height (radius), the dice would in the middle of the grid plane due to the height being the height of the plane. 
+                        y: hitResult.worldTransform.columns.3.y + diceNode.boundingSphere.radius,
+                        z: hitResult.worldTransform.columns.3.z
+                    )
+        
+                    sceneView.scene.rootNode.addChildNode(diceNode)
+                }
             }
         }
     }
