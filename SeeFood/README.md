@@ -1,4 +1,4 @@
-## WhatIsIt
+## SeeFood
 ![Finished App](https://media.giphy.com/media/2rAyT9AvTBmDZhHMXK/giphy.gif "SeeFood iOS app written in Swift 4/iOS 12")
 
 
