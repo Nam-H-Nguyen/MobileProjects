@@ -10,6 +10,8 @@
 
 ![AR Snake Eyes Dice Roll](https://media.giphy.com/media/1RzBxFb8zxGabJQEiK/giphy.gif "Augmented Reality (AR) Snake Eyes Dice Roll iOS App")
 
+<iframe src="https://giphy.com/embed/1RzBxFb8zxGabJQEiK" width="270" height="480" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/ar-augmented-reality-augmentedreality-1RzBxFb8zxGabJQEiK">via GIPHY</a></p>
+
 ---
 ### Augmented Reality (AR) Snake Eyes Dice Roll
 
