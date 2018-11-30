@@ -20,6 +20,8 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         // Set the view's delegate
         sceneView.delegate = self
         
+        // See indicators as sceneView is trying to find feature points in AR to find the horizontal plane
+        self.sceneView.debugOptions = [ARSCNDebugOptions.showFeaturePoints]
 //        // Create a cube object (width, height, length, radius are in Meters)
 //        let sphere = SCNSphere(radius: 0.2)
 //
@@ -47,14 +49,15 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         // Makes the object displayed look not flat
         sceneView.autoenablesDefaultLighting = true
         
-        let diceScene = SCNScene(named: "art.scnassets/diceCollada.scn")!
-        
-        // Recursively look down the tree and include all child nodes of the root node
-        if let diceNode = diceScene.rootNode.childNode(withName: "Dice", recursively: true) {
-            diceNode.position = SCNVector3(x: 0, y: 0, z: -0.1)
-            
-            sceneView.scene.rootNode.addChildNode(diceNode)
-        }
+//        // Already converted dae file to scn file
+//        let diceScene = SCNScene(named: "art.scnassets/diceCollada.scn")!
+//
+//        // Recursively look down the tree and include all child nodes of the root node
+//        if let diceNode = diceScene.rootNode.childNode(withName: "Dice", recursively: true) {
+//            diceNode.position = SCNVector3(x: 0, y: 0, z: -0.1)
+//
+//            sceneView.scene.rootNode.addChildNode(diceNode)
+//        }
         
         
     }
@@ -63,10 +66,23 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         super.viewWillAppear(animated)
         
         // World Tracking allows real augmented reality experience
-        let configuration = ARWorldTrackingConfiguration()
-        
-        // Run the view's session
-        sceneView.session.run(configuration)
+        if ARWorldTrackingConfiguration.isSupported {
+            // Condition is true only for A9 chips or above
+            let configuration = ARWorldTrackingConfiguration()
+            
+            // Detect a horizontal plane, so objects can be placed on the ground instead
+            // of floating in the middle of space
+            configuration.planeDetection = .horizontal
+            
+            // Run the view's session
+            sceneView.session.run(configuration)
+        } else {
+            // Condition is true only for chips below A9
+            let configuration = AROrientationTrackingConfiguration()
+            
+            // Run the view's session
+            sceneView.session.run(configuration)
+        }
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -75,30 +91,40 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         // Pause the view's session
         sceneView.session.pause()
     }
-
-    // MARK: - ARSCNViewDelegate
     
-/*
-    // Override to create and configure nodes for anchors added to the view's session.
-    func renderer(_ renderer: SCNSceneRenderer, nodeFor anchor: ARAnchor) -> SCNNode? {
-        let node = SCNNode()
-     
-        return node
-    }
-*/
-    
-    func session(_ session: ARSession, didFailWithError error: Error) {
-        // Present an error message to the user
-        
-    }
-    
-    func sessionWasInterrupted(_ session: ARSession) {
-        // Inform the user that the session has been interrupted, for example, by presenting an overlay
-        
-    }
-    
-    func sessionInterruptionEnded(_ session: ARSession) {
-        // Reset tracking and/or remove existing anchors if consistent tracking is required
-        
+    // Use an anchor to anchor the object onto the horizontal plane in an AR Scene
+    func renderer(_ renderer: SCNSceneRenderer, didAdd node: SCNNode, for anchor: ARAnchor) {
+        // Check if anchor is on the AR plane
+        if anchor is ARPlaneAnchor {
+            // Set anchor datatype to ARPlaneAnchor
+            let planeAnchor = anchor as! ARPlaneAnchor
+            
+            // Anchor is like a tile with width and height, takes in x and z metrics
+            let plane = SCNPlane(width: CGFloat(planeAnchor.extent.x), height: CGFloat(planeAnchor.extent.z))
+            
+            let planeNode = SCNNode()
+            
+            // Do not place object above the plane thus y = 0
+            // Place the object's node in the center of the plane
+            planeNode.position = SCNVector3(x: planeAnchor.center.x, y: 0, z: planeAnchor.center.z)
+            
+            // SCNPlane is a vertical plane, thus need to transform the vertical plane to horizontal plane by rotating 90 degrees
+            // Metrics is in radians. Float.pi/2 is equivalent to saying 180 degrees divided by 2 or 1 pi radian divided by 2 which is 90 degrees
+            // (+) is counter-clockwise so negative is clockwise
+            // 1 on the x-axis parameter indicate rotating about x axis
+            planeNode.transform = SCNMatrix4MakeRotation(-Float.pi/2, 1, 0, 0)
+            
+            // Show the gride plane on the plane node to better visualize the plane
+            let gridMaterial = SCNMaterial()
+            gridMaterial.diffuse.contents = UIImage(named: "art.scnassets/grid.png")
+            plane.materials = [gridMaterial]
+            planeNode.geometry = plane
+            node.addChildNode(planeNode)
+            
+            
+            
+        } else {
+            return
+        }
     }
 }
