@@ -4,7 +4,7 @@
 
 [AR Snake Eyes Dice Roll gif](https://media.giphy.com/media/1RzBxFb8zxGabJQEiK/giphy.gif "Augmented Reality (AR) Snake Eyes Dice Roll iOS App")
 
-<img src="https://github.com/Nam-H-Nguyen/MobileProjects/blob/master/ARSnakeEyes/ar_dice_roll.PNG" />
+<img src="https://github.com/Nam-H-Nguyen/MobileProjects/blob/master/ARSnakeEyes/ar_dice_roll.PNG" width="25%" height="25%" />
 
 ---
 ### Augmented Reality (AR) Snake Eyes Dice Roll
