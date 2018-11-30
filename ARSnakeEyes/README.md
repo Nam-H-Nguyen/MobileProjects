@@ -2,15 +2,7 @@
 
 **Summary**: AR Snake Eyes is a fun way to roll dices and even shake your device to roll the dices onto a flat surface detected by machine learning. The app recognizes feature points of flat surfaces using the camera, places the horizontal grid onto the surface for better visualization, and then simply tap onto the screen to roll the dice. 
 
-![Alt Text](https://media.giphy.com/media/vFKqnCdLPNOKc/giphy.gif)
-
-<img src="https://media.giphy.com/media/1RzBxFb8zxGabJQEiK/giphy.gif" />
-
-![AR Snake Eyes Dice Roll](https://media.giphy.com/media/1RzBxFb8zxGabJQEiK/giphy.gif )
-
-![AR Snake Eyes Dice Roll](https://media.giphy.com/media/1RzBxFb8zxGabJQEiK/giphy.gif "Augmented Reality (AR) Snake Eyes Dice Roll iOS App")
-
-<iframe src="https://giphy.com/embed/1RzBxFb8zxGabJQEiK" width="270" height="480" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/ar-augmented-reality-augmentedreality-1RzBxFb8zxGabJQEiK">via GIPHY</a></p>
+[AR Snake Eyes Dice Roll gif](https://media.giphy.com/media/1RzBxFb8zxGabJQEiK/giphy.gif "Augmented Reality (AR) Snake Eyes Dice Roll iOS App")
 
 ---
 ### Augmented Reality (AR) Snake Eyes Dice Roll
