@@ -25,7 +25,7 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         sceneView.delegate = self
         
         // See indicators as sceneView is trying to find feature points in AR to find the horizontal plane
-//        self.sceneView.debugOptions = [ARSCNDebugOptions.showFeaturePoints]
+        self.sceneView.debugOptions = [ARSCNDebugOptions.showFeaturePoints]
         
         // Makes the object displayed look not flat
         sceneView.autoenablesDefaultLighting = true
