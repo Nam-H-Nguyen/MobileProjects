@@ -12,6 +12,10 @@ import ARKit
 
 class ViewController: UIViewController, ARSCNViewDelegate {
 
+    // Empty dice array initialized to SCNNode
+    // Purpose: To spin all of the dice nodes all at once by add all dice nodes created into dice array
+    var diceArray = [SCNNode]()
+    
     @IBOutlet var sceneView: ARSCNView!
     
     override func viewDidLoad() {
@@ -104,16 +108,68 @@ class ViewController: UIViewController, ARSCNViewDelegate {
                     diceNode.position = SCNVector3(
                         // worldTransform is 4x4 matrix scale, rotation, position - the 4th column = position
                         x: hitResult.worldTransform.columns.3.x,
-                        // Without adding half of the diceNode's height (radius), the dice would in the middle of the grid plane due to the height being the height of the plane. 
+                        // Without adding half of the diceNode's height (radius), the dice would in the middle of the grid plane due to the height being the height of the plane.
                         y: hitResult.worldTransform.columns.3.y + diceNode.boundingSphere.radius,
                         z: hitResult.worldTransform.columns.3.z
                     )
         
+                    // Append all of the diceNodes into the diceArray
+                    diceArray.append(diceNode)
+                    
                     sceneView.scene.rootNode.addChildNode(diceNode)
+                    
+                    roll(dice: diceNode)
                 }
             }
         }
     }
+    
+    // Rolls all of the dice on the plane
+    func rollAllDiceNodes() {
+        
+        if !diceArray.isEmpty {
+            for dice in diceArray {
+                roll(dice: dice)
+            }
+        }
+    }
+    
+    // Rolls a single dice node
+    func roll(dice: SCNNode) {
+        // Randomize dice rolls along the x and z plane about its axis
+        // Float.pi/2 will give you 90 degree rotations
+        // arc4random of 4 will show 4 faces equally likely, showing numbers 1-4
+        // Rotating along the y-axis won't change the face of the dice, so not needed
+        let randomX = Float(arc4random_uniform(4) + 1) * (Float.pi/2)
+        let randomZ = Float(arc4random_uniform(4) + 1) * (Float.pi/2)
+        
+        // Run as an animation with scene kit
+        dice.runAction(
+            // Multiply randomX by 5 to get more rotation spins (more life-like animation experience)
+            SCNAction.rotateBy(x: CGFloat(randomX * 5), y: 0, z: CGFloat(randomZ * 5), duration: 0.5)
+        )
+    }
+    
+    // When user tap on the refresh bar button, all the dices are rolled again
+    @IBAction func rollAgain(_ sender: UIBarButtonItem) {
+        rollAllDiceNodes()
+    }
+    
+    // Detects when user finish shaking the device. When motion ends, all the dices are rolled
+    override func motionEnded(_ motion: UIEvent.EventSubtype, with event: UIEvent?) {
+        rollAllDiceNodes()
+    }
+    
+    // Remove all of the dice nodes created
+    @IBAction func removeAllDice(_ sender: UIBarButtonItem) {
+        if !diceArray.isEmpty {
+            for dice in diceArray {
+                dice.removeFromParentNode()
+            }
+        }
+    }
+    
+    
     
     // Use an anchor to anchor the object onto the horizontal plane in an AR Scene
     func renderer(_ renderer: SCNSceneRenderer, didAdd node: SCNNode, for anchor: ARAnchor) {
