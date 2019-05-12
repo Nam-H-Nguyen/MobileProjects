@@ -1,0 +1,614 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		5A0D7D671F6EF3580005F38F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A0D7D661F6EF3580005F38F /* AppDelegate.swift */; };
+		5A0D7D691F6EF3580005F38F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A0D7D681F6EF3580005F38F /* ViewController.swift */; };
+		5A0D7D6C1F6EF3580005F38F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5A0D7D6A1F6EF3580005F38F /* Main.storyboard */; };
+		5A0D7D6E1F6EF3580005F38F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5A0D7D6D1F6EF3580005F38F /* Assets.xcassets */; };
+		5A0D7D711F6EF3580005F38F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5A0D7D6F1F6EF3580005F38F /* LaunchScreen.storyboard */; };
+		5A0D7D7D1F6EF5110005F38F /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A0D7D7C1F6EF5110005F38F /* Product.swift */; };
+		5A0D7D7F1F6EF5580005F38F /* ProductCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A0D7D7E1F6EF5580005F38F /* ProductCell.swift */; };
+		5A0D7D811F6EF74B0005F38F /* AlertService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A0D7D801F6EF74B0005F38F /* AlertService.swift */; };
+		5A0D7D831F6EFE750005F38F /* UNService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A0D7D821F6EFE750005F38F /* UNService.swift */; };
+		5A0D7D881F6F03C10005F38F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5A0D7D871F6F03C10005F38F /* GoogleService-Info.plist */; };
+		5A0D7D8A1F6F057A0005F38F /* FIRDatabaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A0D7D891F6F057A0005F38F /* FIRDatabaseService.swift */; };
+		5A0D7D901F6F100C0005F38F /* ProductsSnapshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A0D7D8F1F6F100C0005F38F /* ProductsSnapshot.swift */; };
+		5A0D7D921F6F12620005F38F /* ProductsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A0D7D911F6F12620005F38F /* ProductsService.swift */; };
+		5A0D7D941F6F19580005F38F /* FIRMessagingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A0D7D931F6F19580005F38F /* FIRMessagingService.swift */; };
+		5A0D7D9C1F6F27CA0005F38F /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A0D7D9B1F6F27CA0005F38F /* NotificationService.swift */; };
+		5A0D7DA01F6F27CA0005F38F /* Notif Service Ext.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 5A0D7D991F6F27CA0005F38F /* Notif Service Ext.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		5A0D7DA61F6F2A940005F38F /* DownloadService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A0D7DA51F6F2A940005F38F /* DownloadService.swift */; };
+		5A0D7DA71F6F2C590005F38F /* DownloadService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A0D7DA51F6F2A940005F38F /* DownloadService.swift */; };
+		5D3CDE3FF65B27AA86DF0DAB /* Pods_For_Sale.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62B48088F3058C1246A71EC7 /* Pods_For_Sale.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		5A0D7D9E1F6F27CA0005F38F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5A0D7D5B1F6EF3580005F38F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5A0D7D981F6F27CA0005F38F;
+			remoteInfo = "Notif Service Ext";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		5A0D7DA41F6F27CA0005F38F /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				5A0D7DA01F6F27CA0005F38F /* Notif Service Ext.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		353267495831E80FD3C08F2A /* Pods-For Sale.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-For Sale.debug.xcconfig"; path = "Pods/Target Support Files/Pods-For Sale/Pods-For Sale.debug.xcconfig"; sourceTree = "<group>"; };
+		5A0D7D631F6EF3580005F38F /* For Sale.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "For Sale.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5A0D7D661F6EF3580005F38F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		5A0D7D681F6EF3580005F38F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		5A0D7D6B1F6EF3580005F38F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		5A0D7D6D1F6EF3580005F38F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		5A0D7D701F6EF3580005F38F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		5A0D7D721F6EF3580005F38F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5A0D7D7C1F6EF5110005F38F /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
+		5A0D7D7E1F6EF5580005F38F /* ProductCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCell.swift; sourceTree = "<group>"; };
+		5A0D7D801F6EF74B0005F38F /* AlertService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertService.swift; sourceTree = "<group>"; };
+		5A0D7D821F6EFE750005F38F /* UNService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UNService.swift; sourceTree = "<group>"; };
+		5A0D7D841F6F016B0005F38F /* For Sale.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "For Sale.entitlements"; sourceTree = "<group>"; };
+		5A0D7D871F6F03C10005F38F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../GoogleService-Info.plist"; sourceTree = "<group>"; };
+		5A0D7D891F6F057A0005F38F /* FIRDatabaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FIRDatabaseService.swift; sourceTree = "<group>"; };
+		5A0D7D8F1F6F100C0005F38F /* ProductsSnapshot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsSnapshot.swift; sourceTree = "<group>"; };
+		5A0D7D911F6F12620005F38F /* ProductsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsService.swift; sourceTree = "<group>"; };
+		5A0D7D931F6F19580005F38F /* FIRMessagingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FIRMessagingService.swift; sourceTree = "<group>"; };
+		5A0D7D991F6F27CA0005F38F /* Notif Service Ext.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Notif Service Ext.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5A0D7D9B1F6F27CA0005F38F /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
+		5A0D7D9D1F6F27CA0005F38F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5A0D7DA51F6F2A940005F38F /* DownloadService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadService.swift; sourceTree = "<group>"; };
+		62B48088F3058C1246A71EC7 /* Pods_For_Sale.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_For_Sale.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7CB21EB06FA8E046ACB1190F /* Pods-For Sale.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-For Sale.release.xcconfig"; path = "Pods/Target Support Files/Pods-For Sale/Pods-For Sale.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		5A0D7D601F6EF3580005F38F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5D3CDE3FF65B27AA86DF0DAB /* Pods_For_Sale.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5A0D7D961F6F27CA0005F38F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		5A0D7D5A1F6EF3580005F38F = {
+			isa = PBXGroup;
+			children = (
+				5A0D7D651F6EF3580005F38F /* For Sale */,
+				5A0D7D9A1F6F27CA0005F38F /* Notif Service Ext */,
+				5A0D7D641F6EF3580005F38F /* Products */,
+				D246D5DC7189E9BD344AC5FD /* Pods */,
+				8D77907612478C7790113895 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		5A0D7D641F6EF3580005F38F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5A0D7D631F6EF3580005F38F /* For Sale.app */,
+				5A0D7D991F6F27CA0005F38F /* Notif Service Ext.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		5A0D7D651F6EF3580005F38F /* For Sale */ = {
+			isa = PBXGroup;
+			children = (
+				5A0D7D841F6F016B0005F38F /* For Sale.entitlements */,
+				5A0D7D721F6EF3580005F38F /* Info.plist */,
+				5A0D7D871F6F03C10005F38F /* GoogleService-Info.plist */,
+				5A0D7D7B1F6EF3760005F38F /* Model */,
+				5A0D7D7A1F6EF3710005F38F /* View */,
+				5A0D7D791F6EF36B0005F38F /* Controller */,
+				5A0D7D781F6EF3650005F38F /* Service */,
+			);
+			path = "For Sale";
+			sourceTree = "<group>";
+		};
+		5A0D7D781F6EF3650005F38F /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				5A0D7D801F6EF74B0005F38F /* AlertService.swift */,
+				5A0D7D821F6EFE750005F38F /* UNService.swift */,
+				5A0D7D891F6F057A0005F38F /* FIRDatabaseService.swift */,
+				5A0D7D911F6F12620005F38F /* ProductsService.swift */,
+				5A0D7D931F6F19580005F38F /* FIRMessagingService.swift */,
+				5A0D7DA51F6F2A940005F38F /* DownloadService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		5A0D7D791F6EF36B0005F38F /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				5A0D7D661F6EF3580005F38F /* AppDelegate.swift */,
+				5A0D7D681F6EF3580005F38F /* ViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		5A0D7D7A1F6EF3710005F38F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				5A0D7D6D1F6EF3580005F38F /* Assets.xcassets */,
+				5A0D7D6F1F6EF3580005F38F /* LaunchScreen.storyboard */,
+				5A0D7D6A1F6EF3580005F38F /* Main.storyboard */,
+				5A0D7D7E1F6EF5580005F38F /* ProductCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		5A0D7D7B1F6EF3760005F38F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				5A0D7D7C1F6EF5110005F38F /* Product.swift */,
+				5A0D7D8F1F6F100C0005F38F /* ProductsSnapshot.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		5A0D7D9A1F6F27CA0005F38F /* Notif Service Ext */ = {
+			isa = PBXGroup;
+			children = (
+				5A0D7D9B1F6F27CA0005F38F /* NotificationService.swift */,
+				5A0D7D9D1F6F27CA0005F38F /* Info.plist */,
+			);
+			path = "Notif Service Ext";
+			sourceTree = "<group>";
+		};
+		8D77907612478C7790113895 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				62B48088F3058C1246A71EC7 /* Pods_For_Sale.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D246D5DC7189E9BD344AC5FD /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				353267495831E80FD3C08F2A /* Pods-For Sale.debug.xcconfig */,
+				7CB21EB06FA8E046ACB1190F /* Pods-For Sale.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		5A0D7D621F6EF3580005F38F /* For Sale */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5A0D7D751F6EF3580005F38F /* Build configuration list for PBXNativeTarget "For Sale" */;
+			buildPhases = (
+				7B038800334DC0E2D1439650 /* [CP] Check Pods Manifest.lock */,
+				5A0D7D5F1F6EF3580005F38F /* Sources */,
+				5A0D7D601F6EF3580005F38F /* Frameworks */,
+				5A0D7D611F6EF3580005F38F /* Resources */,
+				F78DCCB99DD706969C1C4C2C /* [CP] Embed Pods Frameworks */,
+				0158C9C46BE0B5EAAD0231DC /* [CP] Copy Pods Resources */,
+				5A0D7DA41F6F27CA0005F38F /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5A0D7D9F1F6F27CA0005F38F /* PBXTargetDependency */,
+			);
+			name = "For Sale";
+			productName = "For Sale";
+			productReference = 5A0D7D631F6EF3580005F38F /* For Sale.app */;
+			productType = "com.apple.product-type.application";
+		};
+		5A0D7D981F6F27CA0005F38F /* Notif Service Ext */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5A0D7DA11F6F27CA0005F38F /* Build configuration list for PBXNativeTarget "Notif Service Ext" */;
+			buildPhases = (
+				5A0D7D951F6F27CA0005F38F /* Sources */,
+				5A0D7D961F6F27CA0005F38F /* Frameworks */,
+				5A0D7D971F6F27CA0005F38F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Notif Service Ext";
+			productName = "Notif Service Ext";
+			productReference = 5A0D7D991F6F27CA0005F38F /* Notif Service Ext.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		5A0D7D5B1F6EF3580005F38F /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0900;
+				LastUpgradeCheck = 0900;
+				ORGANIZATIONNAME = "Kyle Lee";
+				TargetAttributes = {
+					5A0D7D621F6EF3580005F38F = {
+						CreatedOnToolsVersion = 9.0;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
+					};
+					5A0D7D981F6F27CA0005F38F = {
+						CreatedOnToolsVersion = 9.0;
+					};
+				};
+			};
+			buildConfigurationList = 5A0D7D5E1F6EF3580005F38F /* Build configuration list for PBXProject "For Sale" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 5A0D7D5A1F6EF3580005F38F;
+			productRefGroup = 5A0D7D641F6EF3580005F38F /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				5A0D7D621F6EF3580005F38F /* For Sale */,
+				5A0D7D981F6F27CA0005F38F /* Notif Service Ext */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		5A0D7D611F6EF3580005F38F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5A0D7D711F6EF3580005F38F /* LaunchScreen.storyboard in Resources */,
+				5A0D7D881F6F03C10005F38F /* GoogleService-Info.plist in Resources */,
+				5A0D7D6E1F6EF3580005F38F /* Assets.xcassets in Resources */,
+				5A0D7D6C1F6EF3580005F38F /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5A0D7D971F6F27CA0005F38F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0158C9C46BE0B5EAAD0231DC /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-For Sale/Pods-For Sale-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7B038800334DC0E2D1439650 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		F78DCCB99DD706969C1C4C2C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-For Sale/Pods-For Sale-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		5A0D7D5F1F6EF3580005F38F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5A0D7D831F6EFE750005F38F /* UNService.swift in Sources */,
+				5A0D7D8A1F6F057A0005F38F /* FIRDatabaseService.swift in Sources */,
+				5A0D7D691F6EF3580005F38F /* ViewController.swift in Sources */,
+				5A0D7D7F1F6EF5580005F38F /* ProductCell.swift in Sources */,
+				5A0D7D671F6EF3580005F38F /* AppDelegate.swift in Sources */,
+				5A0D7D901F6F100C0005F38F /* ProductsSnapshot.swift in Sources */,
+				5A0D7D7D1F6EF5110005F38F /* Product.swift in Sources */,
+				5A0D7D811F6EF74B0005F38F /* AlertService.swift in Sources */,
+				5A0D7D941F6F19580005F38F /* FIRMessagingService.swift in Sources */,
+				5A0D7D921F6F12620005F38F /* ProductsService.swift in Sources */,
+				5A0D7DA61F6F2A940005F38F /* DownloadService.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5A0D7D951F6F27CA0005F38F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5A0D7D9C1F6F27CA0005F38F /* NotificationService.swift in Sources */,
+				5A0D7DA71F6F2C590005F38F /* DownloadService.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		5A0D7D9F1F6F27CA0005F38F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5A0D7D981F6F27CA0005F38F /* Notif Service Ext */;
+			targetProxy = 5A0D7D9E1F6F27CA0005F38F /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		5A0D7D6A1F6EF3580005F38F /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5A0D7D6B1F6EF3580005F38F /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		5A0D7D6F1F6EF3580005F38F /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5A0D7D701F6EF3580005F38F /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		5A0D7D731F6EF3580005F38F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		5A0D7D741F6EF3580005F38F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		5A0D7D761F6EF3580005F38F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 353267495831E80FD3C08F2A /* Pods-For Sale.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "For Sale/For Sale.entitlements";
+				DEVELOPMENT_TEAM = 5K99777NES;
+				INFOPLIST_FILE = "For Sale/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.kiloloco.For-Sale";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		5A0D7D771F6EF3580005F38F /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7CB21EB06FA8E046ACB1190F /* Pods-For Sale.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "For Sale/For Sale.entitlements";
+				DEVELOPMENT_TEAM = 5K99777NES;
+				INFOPLIST_FILE = "For Sale/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.kiloloco.For-Sale";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		5A0D7DA21F6F27CA0005F38F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEVELOPMENT_TEAM = 5K99777NES;
+				INFOPLIST_FILE = "Notif Service Ext/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.kiloloco.For-Sale.Notif-Service-Ext";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		5A0D7DA31F6F27CA0005F38F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEVELOPMENT_TEAM = 5K99777NES;
+				INFOPLIST_FILE = "Notif Service Ext/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.kiloloco.For-Sale.Notif-Service-Ext";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		5A0D7D5E1F6EF3580005F38F /* Build configuration list for PBXProject "For Sale" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5A0D7D731F6EF3580005F38F /* Debug */,
+				5A0D7D741F6EF3580005F38F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5A0D7D751F6EF3580005F38F /* Build configuration list for PBXNativeTarget "For Sale" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5A0D7D761F6EF3580005F38F /* Debug */,
+				5A0D7D771F6EF3580005F38F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5A0D7DA11F6F27CA0005F38F /* Build configuration list for PBXNativeTarget "Notif Service Ext" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5A0D7DA21F6F27CA0005F38F /* Debug */,
+				5A0D7DA31F6F27CA0005F38F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 5A0D7D5B1F6EF3580005F38F /* Project object */;
+}

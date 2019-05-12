@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina5_5" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Moti" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6o6-OW-kfz">
+                                <rect key="frame" x="0.0" y="676" width="414" height="60"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleAspectFit" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AR5-MT-3fv">
+                                        <rect key="frame" x="67" y="4" width="50" height="52"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="S2N-1F-2xf"/>
+                                            <constraint firstAttribute="width" constant="79" id="UHi-fN-xXe"/>
+                                        </constraints>
+                                        <state key="normal" title="Button" image="dateIcon"/>
+                                        <connections>
+                                            <action selector="onDateTapped" destination="BYZ-38-t0r" eventType="touchUpInside" id="brK-dQ-adK"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleAspectFit" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UYb-EW-17W">
+                                        <rect key="frame" x="296" y="5" width="56" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="60" id="O4q-IM-eUS"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="79" id="Vl1-dh-6qv"/>
+                                        </constraints>
+                                        <state key="normal" image="locationIcon"/>
+                                        <connections>
+                                            <action selector="onLocationTapped" destination="BYZ-38-t0r" eventType="touchUpInside" id="g6L-1s-sqI"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleAspectFit" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YJd-iP-zI0">
+                                        <rect key="frame" x="182" y="5" width="50" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="60" id="dgT-29-MQc"/>
+                                            <constraint firstAttribute="width" constant="79" id="o2W-2s-js2"/>
+                                        </constraints>
+                                        <state key="normal" title="Button" image="timerIcon"/>
+                                        <connections>
+                                            <action selector="onTimerTapped" destination="BYZ-38-t0r" eventType="touchUpInside" id="5fT-DU-hxg"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="1" green="0.60434244439356632" blue="0.57942192577754148" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="UYb-EW-17W" firstAttribute="leading" secondItem="YJd-iP-zI0" secondAttribute="trailing" constant="64" id="cjO-3c-zqv"/>
+                                    <constraint firstItem="YJd-iP-zI0" firstAttribute="leading" secondItem="AR5-MT-3fv" secondAttribute="trailing" constant="65" id="wZ9-1l-B9l"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="6o6-OW-kfz" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="9Fe-wf-Oz0"/>
+                            <constraint firstItem="6o6-OW-kfz" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="656" id="Fns-Pb-DkE"/>
+                            <constraint firstItem="6o6-OW-kfz" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="JRt-bi-7NP"/>
+                            <constraint firstItem="6o6-OW-kfz" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="frz-ak-rwC"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="126.35869565217392"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="dateIcon" width="100" height="100"/>
+        <image name="locationIcon" width="100" height="100"/>
+        <image name="timerIcon" width="100" height="100"/>
+    </resources>
+</document>

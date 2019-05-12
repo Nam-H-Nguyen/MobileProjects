@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>AD_UNIT_ID_FOR_BANNER_TEST</key>
+	<string>ca-app-pub-3940256099942544/2934735716</string>
+	<key>AD_UNIT_ID_FOR_INTERSTITIAL_TEST</key>
+	<string>ca-app-pub-3940256099942544/4411468910</string>
+	<key>CLIENT_ID</key>
+	<string>538867033678-qn2r75o6c19nei9afe9rft3h31uoscfu.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.538867033678-qn2r75o6c19nei9afe9rft3h31uoscfu</string>
+	<key>API_KEY</key>
+	<string>AIzaSyDEmmEClZxFy7uO2kq9qe906mA8f41PBTA</string>
+	<key>GCM_SENDER_ID</key>
+	<string>538867033678</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.kiloloco.For-Sale</string>
+	<key>PROJECT_ID</key>
+	<string>for-sale-a3b9b</string>
+	<key>STORAGE_BUCKET</key>
+	<string>for-sale-a3b9b.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<true/>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false/>
+	<key>IS_APPINVITE_ENABLED</key>
+	<false/>
+	<key>IS_GCM_ENABLED</key>
+	<true/>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true/>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:538867033678:ios:181b8440e0adb69f</string>
+	<key>DATABASE_URL</key>
+	<string>https://for-sale-a3b9b.firebaseio.com</string>
+</dict>
+</plist>
